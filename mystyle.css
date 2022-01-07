@@ -9,6 +9,25 @@
 /* vmin vw和vh中较小的值 */
 /* vmax vw和vh中较大的值 */
 /* % 相对于父元素宽度和字体大小的百分比 */
+/*通用选择器，用来清楚内外边距*/
+/*CSS选择器*/
+/*1 通用选择器*/
+*{
+    margin: 0 auto;
+    padding: 0;
+}
+/*2 标签选择器*/
+p{
+    font-size:2em;
+    color:blue;
+}
+/* 3 ID选择器*/
+/*用来匹配HTML文档中指定ID属性的标签，ID选择器用#号开头，后面接ID属性值*/
+#id_selector{
+    color: rgba(185, 67, 12, 0.747)
+}
+/* 4 类选择器*/
+/*根据标签的class属性匹配具体的HTML标签，类选择器需要用到一个英文.,后面根class属性的值*/
 .box{
     width: 60vw;
     height: 88vh;
@@ -16,7 +35,24 @@
     font-size: 16px;
 }
 .info{
-    font-size: 2em;
+    font-size: 5em;
+}
+.info1{
+    color:aqua;
+    font-size:11em;
+}
+.info.info1{
+    font-size:1em;
+}
+/* 5 后代选择器*/
+p  a{
+    color: rgb(13, 202, 13);
+    font-size: 4em;
+}
+/* 6 子选择器 */
+p > strong {
+    text-decoration: none;
+    font-size: 5em;
 }
 .ex > span{
     font-size: 3ex
@@ -24,10 +60,137 @@
 .ch > span{
     font-size:4ch
 }
-body{
-    background-color: linen;
+/* 7 相邻兄弟选择器*/
+/* 这两个元素拥有同一个夫级元素且不存在嵌套关系。*/
+h1 + p{
+    color: greenyellow;
+    font-size: 18px;
+}
+/* 8 通用兄弟选择器 */
+/* 不必相邻，会匹配h1标签后所有的p标签*/ 
+h1 ~ p {
+    color:goldenrod;
+    font-size:2.4em;
+}
+/* 9 分组选择器 */
+可以讲同样的样式应用到多个选择器汇总，每个选择器职期间用逗号,分隔
+h1,h2,h3{
+    font-weight:normal;
 }
 h1{
-    color:maroon;
-    margin-left: 50px;
+    font-size:1em;
+}
+h2{
+    font-size:2em;
+    color: #000;
+}
+h3{
+    font-size:3em;
+    color: #000;
+}
+/* 10 属性选择器*/
+input[type="text"]{
+    color:darkblue;
+    border:2px solid ;
+    border-color: green;
+    font-size:2em;
+}
+/* CSS backgroudn
+background-color : 设置元素的背景颜色
+background-image : 设置元素的背景图像
+background-repeat: 控制背景图像是否重复
+background-attachment: 控制背景图像是否哦跟随窗口滚动
+background-position:   控制背景图像在元素中的位置
+background-size:       设置背景图像的尺寸
+background-origin:     设置background-position属性相对于什么位置定位背景图像
+background-clip:       设置背景图像的显示区域
+background:            背景属性的缩写，可以在一个声明中设置所有的背景属性
+*/
+#bgc{
+/*background-color: blue;
+background-image: url('https://assets.geoexpro.com/uploads/805aac10-1a7b-4d39-9a92-f7effd267b50/Geoteric_Advancing_Subsurface_Understanding_Using_AI_14.png');
+background-repeat: no-repeat;
+background-repeat: repeat-y;
+background-position: center center;
+background-attachment: fixed;
+background-size: 100% 100%;
+background-size: 1024px 1024px;
+background-size: cover;
+background-size: contain;
+background-clip: border-box;
+background-clip: padding-box;
+background-clip: content-box;
+background: red repeat*/
+/*可以设置多组属性*/
+background: url('https://assets.geoexpro.com/uploads/805aac10-1a7b-4d39-9a92-f7effd267b50/Geoteric_Advancing_Subsurface_Understanding_Using_AI_14.png') 10px 10px/60px 60px no-repeat padding-box,
+url('https://assets.geoexpro.com/uploads/805aac10-1a7b-4d39-9a92-f7effd267b50/Geoteric_Advancing_Subsurface_Understanding_Using_AI_14.png') 50px 30px/120px 120px no-repeat content-box,
+url('https://assets.geoexpro.com/uploads/805aac10-1a7b-4d39-9a92-f7effd267b50/Geoteric_Advancing_Subsurface_Understanding_Using_AI_14.png') 140px 40px/200px 100px no-repeat content-box #58a;
+}
+/*CSS字体样式
+font-family: 设置字体
+font-style: 设置字体的风格，例如倾斜，斜体等
+font-weight: 设置字体粗细
+font-size:   设置字体尺寸
+font-variant: 将小写字母转换为小型大写字母
+font: 字体属性的缩写，可以在一个声明中设置多个字体属性
+*/
+/*font-family设置元素内文本的字体，由于电脑里不一定拥有所有的字体，可以通过font-family属性定义一个由若干字体名称组成的列表，字体名称之间使用，分割，浏览器或首先尝试第一个*/
+.fs{
+    font-family: STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑";
+    font-family: Helvetica, Tahoma, Arial;
+    font-style: italic;
+    font-weight: lighter;
+    font-weight: bolder;
+    font-size: large;
+    font-size: x-small;
+}
+/*
+CSS文本格式化
+使用文本属性可以像炒作Word文档那样定义网页中文本的字符间距，对齐方式，缩进等等，CSS中常用的文本属性如下:
+text-align: 设置文本的水平对齐方式
+text-decoration: 设置文本的装饰
+text-transform:  设置文本中英文大小写装换方式
+text-indent: 设置文本缩进方式
+line-height: 设置行高
+letter-spacing: 设置字符间距
+word-spacing: 设置单词与单词之间的间距(对中文无效）
+text-shadow: 设置文本阴影
+vertical-align: 设置文本的垂直对齐方式
+white-space: 设置文本中空白的处理方式
+direction: 设置文本方向
+*/
+.text1{
+    text-align: left;
+}
+.text2{
+    text-align: center;
+}
+.text3{
+    text-align: right;
+}
+/* text-decoration 可选属性如下
+none: 默认值 标准文本 没有额外装饰， 可以用来删除已有的文本装饰
+underline: 在文本下方添加一条下划线
+overline:  在文本上方添加一条上划线
+line-through: 在文本中间定义一条横向贯穿文本的线 (删除线）
+*/
+.td1{
+    text-decoration: underline;
+}
+.td2{
+    text-decoration: overline;
+}
+.td3{
+    text-decoration: line-through;
+}
+/* text-transform属性用来控制文本中英文字母的大小写，
+通过该属性你可以在不修改原文的基础上，将文本中的英文统一更改为
+小写字母、大写字母或者首字母大写的形式，其属性可选值如下:
+none: 默认值，以原文显示，对文本汇总的英文不做更改
+capitalize: 将文本中的每个单词更改为以大写开头
+uppercase:  将文本全部改为大写
+lowercase:  将文本全部改为小写
+*/
+.td4{
+    text-shadow: 2px 15px 2px red;
 }
