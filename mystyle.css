@@ -194,3 +194,29 @@ lowercase:  将文本全部改为小写
 .td4{
     text-shadow: 2px 15px 2px red;
 }
+/*CSS边框样式 (border)
+border-style 设置边框样式，例如实线，虚线
+border-width 设置边框的宽度
+border-color 设置边框的颜色
+border 上面三个边框的属性的缩写
+*/
+.border_style{
+    border-style: inset;
+    border-width: 5px;
+    border-color:blue;
+}
+/*
+CSS resize
+*/
+.div_resize{
+    border: 1px solid;
+    width: 300px;
+    resize: both;
+    overflow: auto;
+}
+/*
+CSS flex布局
+Flexible Box的缩写，弹性盒子，是CSS中的一种新的布局模式。
+*/
+
+
